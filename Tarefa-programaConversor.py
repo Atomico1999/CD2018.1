@@ -86,9 +86,9 @@ print """	 	OPÇÕES
  	4   hexadecimal → decimal
  	5   binario → hexadecimal
  	6   hexadecimal → binario
- 	9	exibir operações permitidas
- 	0	finalizar programa.
-	(ATENÇÃO: AS LETRAS DEVEM SER MAIÚSCULAS)
+ 	9   exibir operações permitidas
+ 	0   finalizar programa.
+	(ATENÇÃO: AS LETRAS HEXADECIMAIS DEVEM SER MAIÚSCULAS)
 	"""
 escolha = ' '
 
@@ -113,16 +113,16 @@ while escolha != '0':
 		entrada = raw_input("hexadecimal:")
 		print "Valor convertido:" , (hexParaBin(entrada)) , "\n"
 	elif escolha == '9':
-		print """	 	OPÇÕES
+		print """\n	 	OPÇÕES
 	1   binario → decimal
 	2   decimal → binario
  	3   decimal → hexadecimal
  	4   hexadecimal → decimal
  	5   binario → hexadecimal
  	6   hexadecimal → binario
- 	9	exibir operações permitidas
- 	0	finalizar programa.
-	(ATENÇÃO: AS LETRAS DEVEM SER MAIÚSCULAS)
+ 	9   exibir operações permitidas
+ 	0   finalizar programa.
+	(ATENÇÃO: AS LETRAS HEXADECIMAIS DEVEM SER MAIÚSCULAS)
 	"""
 	elif escolha != '0':
 		print "Insira uma opção válida\n"
