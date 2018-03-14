@@ -16,7 +16,7 @@
 int main(){
 	
 	long long int entrada, Q, R, aux1, maiorExpoente;
-	saida = malloc(1000*sizeof(char));
+	char saida[1000] = {};
 	int continuar = true;
 	int menu;
 
@@ -25,7 +25,7 @@ int main(){
 	while(continuar == true){
 		
 		for(int i = 0; i < 1000; i++){
-			saida[i] = ""
+			saida[i] = '';
 		}
 		aux1 = 1;
 		Q = 0;
