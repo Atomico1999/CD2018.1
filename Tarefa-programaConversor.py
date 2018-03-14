@@ -8,6 +8,21 @@
 #	 Louis Ian Silva dos Santos - 402525
 #	 Francisco Rodrigo Ferreira Uchôa - 403709 
 
+
+def digitoHexaIda(digito):
+	digitos = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
+	numeros = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+	for i in range(len(digitos)):
+		if digito == digitos[i]:
+			return i
+
+def digitoHexaVolta(digito):
+	digitos = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
+	numeros = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+	for i in range(len(digitos)):
+		if digito == numeros[i]:
+			return digitos[i]
+
 def binParaDec(numBin):
 	decimal = 0
 	expoente = 0
@@ -30,30 +45,19 @@ def decParaBin(numDec):
 
 	return binario
 
-def digitoHexaIda(digito):
-	digitos = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
-	numeros = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-	for i in range(len(digitos)):
-		if digito == digitos[i]:
-			return i
-
-def digitoHexaVolta(digito):
-	digitos = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
-	numeros = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-	for i in range(len(digitos)):
-		if digito == numeros[i]:
-			return digitos[i]
-
 def decParaHex(numDec):
-#	hexadecimal = ['0','0','0','0','0','0','0','0','0','0','0','0']
-#	expoente = 0
-#
-#	while numDec > 0:
-#		hexadecimal[(len(hexadecimal)-expoente)-1] = digitoHexaVolta(numDec % 16)
-#		expoente += 1
+	hexadecimal = [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ']
+	expoente = 0
 
-	hexadecimal = hex(numDec)
-	hexadecimal = hexadecimal[2:]
+	while numDec > 0:
+		hexadecimal[(len(hexadecimal)-expoente)-1] = digitoHexaVolta(numDec % 16)
+		numDec //= 16
+		expoente += 1
+
+	#hexadecimal = hex(numDec)
+	indexInicial = hexadecimal.count(' ')
+	hexadecimal = hexadecimal[indexInicial:]
+	hexadecimal = ''.join(hexadecimal)
 
 	return hexadecimal
 
@@ -80,23 +84,45 @@ print """	 	OPÇÕES
 	2   decimal → binario
  	3   decimal → hexadecimal
  	4   hexadecimal → decimal
- 	5   binario → hexadecimal &
- 	6   hexadecimal → binario."""
+ 	5   binario → hexadecimal
+ 	6   hexadecimal → binario
+ 	9	exibir operações permitidas
+ 	0	finalizar programa.
+	(ATENÇÃO: AS LETRAS DEVEM SER MAIÚSCULAS)
+	"""
+escolha = ' '
 
-teste5 = input("binario:")
-print(binParaHex(teste5))
-
-
-"""		SUCESSO
-teste1 = input("binario:")
-print(binParaDec(teste1))
-
-teste2 = input("decimal:")
-print(decParaBin(teste2))
-
-teste3 = input("decimal:")
-print (decParaHex(teste3))
-
-teste4 = raw_input("hexadecimal:")
-print(hexParaDec(teste4))
-"""
+while escolha != '0':	
+	escolha = raw_input("Insira a operação: ")
+	if(escolha == '1'):
+		entrada = input("binario:")
+		print "Valor convertido:" , (binParaDec(entrada)) , "\n"
+	elif escolha == '2':
+		entrada = input("decimal:")
+		print "Valor convertido:" , (decParaBin(entrada)) , "\n"
+	elif escolha == '3':
+		entrada = input("decimal:")
+		print "Valor convertido:" , (decParaHex(entrada)) , "\n"
+	elif escolha == '4':
+		entrada = raw_input("hexadecimal:")
+		print "Valor convertido:" , (hexParaDec(entrada)) , "\n"
+	elif escolha == '5':
+		entrada = input("binario:")
+		print "Valor convertido:" , (binParaHex(entrada)) , "\n"
+	elif escolha == '6':
+		entrada = raw_input("hexadecimal:")
+		print "Valor convertido:" , (hexParaBin(entrada)) , "\n"
+	elif escolha == '9':
+		print """	 	OPÇÕES
+	1   binario → decimal
+	2   decimal → binario
+ 	3   decimal → hexadecimal
+ 	4   hexadecimal → decimal
+ 	5   binario → hexadecimal
+ 	6   hexadecimal → binario
+ 	9	exibir operações permitidas
+ 	0	finalizar programa.
+	(ATENÇÃO: AS LETRAS DEVEM SER MAIÚSCULAS)
+	"""
+	elif escolha != '0':
+		print "Insira uma opção válida\n"
