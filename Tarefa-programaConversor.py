@@ -1,5 +1,5 @@
 #-*- coding:utf-8 -*-
-#Complado em python 2.7
+#Compilado em python 2.7
 #
 # Tarefa: criar conversor decimal-binario-hexadecimal
 # 2 integrantes - tempo estimado para entrega: 10 dias
