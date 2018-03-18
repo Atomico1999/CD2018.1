@@ -8,7 +8,6 @@
 #	 Louis Ian Silva dos Santos - 402525
 #	 Francisco Rodrigo Ferreira Uchôa - 403709 
 
-
 def digitoHexaIda(digito):
 	digitos = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
 	numeros = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
@@ -79,21 +78,21 @@ def hexParaBin(numHex):
 	binario = decParaBin(hexParaDec(numHex))
 	return binario
 
-print """	 	OPÇÕES
-	1   binario → decimal
-	2   decimal → binario
- 	3   decimal → hexadecimal
- 	4   hexadecimal → decimal
- 	5   binario → hexadecimal
- 	6   hexadecimal → binario
- 	9   exibir operações permitidas
+print """	 	OPCOES
+	1   binario -> decimal
+	2   decimal -> binario
+ 	3   decimal -> hexadecimal
+ 	4   hexadecimal -> decimal
+ 	5   binario -> hexadecimal
+ 	6   hexadecimal -> binario
+ 	9   exibir operacoes permitidas
  	0   finalizar programa.
-	(ATENÇÃO: AS LETRAS HEXADECIMAIS DEVEM SER MAIÚSCULAS)
+	(ATENCAO: AS LETRAS HEXADECIMAIS DEVEM SER MAIÚSCULAS)
 	"""
 escolha = ' '
 
 while escolha != '0':	
-	escolha = raw_input("Insira a operação: ")
+	escolha = raw_input("Insira a operacao: ")
 	if(escolha == '1'):
 		entrada = input("binario:")
 		print "Valor convertido:" , (binParaDec(entrada)) , "\n"
@@ -113,16 +112,16 @@ while escolha != '0':
 		entrada = raw_input("hexadecimal:")
 		print "Valor convertido:" , (hexParaBin(entrada)) , "\n"
 	elif escolha == '9':
-		print """\n	 	OPÇÕES
-	1   binario → decimal
-	2   decimal → binario
- 	3   decimal → hexadecimal
- 	4   hexadecimal → decimal
- 	5   binario → hexadecimal
- 	6   hexadecimal → binario
- 	9   exibir operações permitidas
+		print """\n	 	OPCOES
+	1   binario -> decimal
+	2   decimal -> binario
+ 	3   decimal -> hexadecimal
+ 	4   hexadecimal -> decimal
+ 	5   binario -> hexadecimal
+ 	6   hexadecimal -> binario
+ 	9   exibir operacoes permitidas
  	0   finalizar programa.
-	(ATENÇÃO: AS LETRAS HEXADECIMAIS DEVEM SER MAIÚSCULAS)
+	(ATENCAO: AS LETRAS HEXADECIMAIS DEVEM SER MAIUSCULAS)
 	"""
 	elif escolha != '0':
-		print "Insira uma opção válida\n"
+		print "Insira uma opcao valida\n"
