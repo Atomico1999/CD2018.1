@@ -87,7 +87,7 @@ print """	 	OPCOES
  	6   hexadecimal -> binario
  	9   exibir operacoes permitidas
  	0   finalizar programa.
-	(ATENCAO: AS LETRAS HEXADECIMAIS DEVEM SER MAIÚSCULAS)
+	(ATENCAO: AS LETRAS HEXADECIMAIS DEVEM SER MAIUSCULAS)
 	"""
 escolha = ' '
 
