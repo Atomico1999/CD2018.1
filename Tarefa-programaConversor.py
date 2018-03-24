@@ -34,6 +34,17 @@ def binParaDec(numBin):
 
 	return decimal
 
+def octParaDec(numOct):
+	decimal = 0
+	expoente = 0
+
+	while numOct > 0:
+		decimal += 8**expoente * (numOct % 10)
+		numOct //= 10
+		expoente += 1
+
+	return decimal
+
 def decParaBin(numDec):
 	binario = 0
 	expoente = 0
@@ -45,6 +56,17 @@ def decParaBin(numDec):
 
 	return binario
 
+def decParaOct(numDec):
+	octal = 0
+	expoente = 0
+
+	while numDec > 0:
+		octal += 10**expoente * (numDec % 8)
+		numDec //= 8
+		expoente += 1
+
+	return octal
+
 def decParaHex(numDec):
 	hexadecimal = [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ']
 	expoente = 0
@@ -54,7 +76,6 @@ def decParaHex(numDec):
 		numDec //= 16
 		expoente += 1
 
-	#hexadecimal = hex(numDec)
 	indexInicial = hexadecimal.count(' ')
 	hexadecimal = hexadecimal[indexInicial:]
 	hexadecimal = ''.join(hexadecimal)
@@ -79,50 +100,68 @@ def hexParaBin(numHex):
 	binario = decParaBin(hexParaDec(numHex))
 	return binario
 
-print """	 	OPÇÕES
-	1   binario → decimal
-	2   decimal → binario
- 	3   decimal → hexadecimal
- 	4   hexadecimal → decimal
- 	5   binario → hexadecimal
- 	6   hexadecimal → binario
- 	9   exibir operações permitidas
- 	0   finalizar programa.
-	(ATENÇÃO: AS LETRAS HEXADECIMAIS DEVEM SER MAIÚSCULAS)
-	"""
-escolha = ' '
+def octParaBin(numOct):
+	binario = decParaBin(octParaDec(numOct))
+	return binario
 
-while escolha != '0':	
-	escolha = raw_input("Insira a operação: ")
-	if(escolha == '1'):
+def binParaOct(numBin):
+	octal = decParaOct(binParaDec(numBin))
+	return octal
+
+def octParaHexa(numOct):
+	hexadecimal = decParaHex(octParaDec(numOct))
+	return hexadecimal
+
+def hexaParaOct(numHex):
+	octal = decParaOct(hexParaDec(numHex))
+	return octal
+
+print """	 	OPERACOES DISPONIVEIS
+	1   binario
+	2   octal
+ 	3   decimal
+ 	4   hexadecimal
+ 	9   exibir operações validas
+ 	0   finalizar programa
+	(ATENCAO: AS LETRAS HEXADECIMAIS DEVEM SER MAIUSCULAS)
+	"""
+escolha1 = ' '
+escolha2 = ' '
+
+while escolha1 != '0' && escolha2 != '0':	
+	escolha1 = raw_input("Insira a base da entrada: ")
+	if(escolha1 == escolha2):
+		print "Valor binario:" , (ntrada) , "\n"
+	elif(escolha1 == '1' && escolha2 == '2'):
 		entrada = input("binario:")
-		print "Valor convertido:" , (binParaDec(entrada)) , "\n"
-	elif escolha == '2':
-		entrada = input("decimal:")
-		print "Valor convertido:" , (decParaBin(entrada)) , "\n"
-	elif escolha == '3':
-		entrada = input("decimal:")
-		print "Valor convertido:" , (decParaHex(entrada)) , "\n"
-	elif escolha == '4':
-		entrada = raw_input("hexadecimal:")
-		print "Valor convertido:" , (hexParaDec(entrada)) , "\n"
-	elif escolha == '5':
+		print "Valor octal:" , (binParaOct(entrada)) , "\n"
+	elif(escolha1 == '1' && escolha2 == '3'):
 		entrada = input("binario:")
-		print "Valor convertido:" , (binParaHex(entrada)) , "\n"
-	elif escolha == '6':
-		entrada = raw_input("hexadecimal:")
-		print "Valor convertido:" , (hexParaBin(entrada)) , "\n"
+		print "Valor decimal:" , (binParaDec(entrada)) , "\n"
+	elif(escolha1 == '1' && escolha2 == '4'):
+		entrada = input("binario:")
+		print "Valor hexadecimal:" , (binParaHex(entrada)) , "\n"
+	elif(escolha1 == '2' && escolha2 == '1'):
+		entrada = input("octal:")
+		print "Valor binario:" , (octParaBin(entrada)) , "\n"
+	elif(escolha1 == '2' && escolha2 == '2'):
+		entrada = input("octal:")
+		print "Valor convertido:" , (entrada) , "\n"
+	elif(escolha1 == '2' && escolha2 == '3'):
+		entrada = input("octal:")
+		print "Valor convertido:" , (entrada) , "\n"
+
 	elif escolha == '9':
-		print """\n	 	OPÇÕES
-	1   binario → decimal
-	2   decimal → binario
- 	3   decimal → hexadecimal
- 	4   hexadecimal → decimal
- 	5   binario → hexadecimal
- 	6   hexadecimal → binario
+		print """\n	 	OPCOES
+	1   binario > decimal
+	2   decimal > binario
+ 	3   decimal > hexadecimal
+ 	4   hexadecimal > decimal
+ 	5   binario > hexadecimal
+ 	6   hexadecimal > binario
  	9   exibir operações permitidas
  	0   finalizar programa.
-	(ATENÇÃO: AS LETRAS HEXADECIMAIS DEVEM SER MAIÚSCULAS)
+	(ATENCAO: AS LETRAS HEXADECIMAIS DEVEM SER MAIUSCULAS)
 	"""
 	elif escolha != '0':
-		print "Insira uma opção válida\n"
+		print "Insira uma opcao valida\n"
