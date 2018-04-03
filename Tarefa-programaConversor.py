@@ -133,7 +133,7 @@ while (escolha1 != '0' and escolha2 != '0'):
 	escolha1 = raw_input("Insira a opcao escolhida ou a base da entrada: ")
 	if(escolha1 == '0'):
 		escolha2 = '0'
-		print("Programa encerrado\n")
+		print "Programa encerrado\n"
 	elif (escolha1 == '9'):
 		print """		 OPCOES DISPONIVEIS
 	1   binario
