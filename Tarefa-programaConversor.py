@@ -1,8 +1,8 @@
 #-*- coding:utf-8 -*-
 #Escrito e compilado em python 2.7
 #
-# Tarefa: criar conversor decimal-binario-hexadecimal
-# 2 integrantes - tempo estimado para entrega: 10 dias
+# Tarefa: criar conversor decimal-binario-hexadecimal-octadecimal
+# 2 integrantes - data para entrega: 06/abril
 #
 # Integrantes da equipe: NOME - MATRÍCULA
 #	 Louis Ian Silva dos Santos - 402525
